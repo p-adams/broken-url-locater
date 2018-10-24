@@ -1,19 +1,30 @@
 {
   "name": "broken-url-locater",
+  "publisher": "p-adams",
   "version": "1.0.0",
   "description": "A Sourcegraph extension that locates broken URLs in code",
-  "main": "index.js",
+  "main": "dist/extension.js",
+  "activationEvents": [
+    "*"
+  ],
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "sourcegraph:prepublish": "parcel build src/extension.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/p-adams/broken-url-locater.git"
+    "url": "https://github.com/p-adams/broken-url-locater"
   },
   "author": "Paul Adams",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/p-adams/broken-url-locater/issues"
   },
-  "homepage": "https://github.com/p-adams/broken-url-locater#readme"
+  "homepage": "https://github.com/p-adams/broken-url-locater#readme",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.9.7",
+    "sourcegraph": "^16.0.0",
+    "typescript": "^3.0.3"
+  }
 }
